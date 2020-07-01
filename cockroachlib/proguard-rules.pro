@@ -19,8 +19,4 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
--keep class com.talkweb.lxl.cockroachlib.CockroachImprove
--keep class com.talkweb.lxl.cockroachlib.CrashErrorUtil
--keep class com.talkweb.lxl.cockroachlib.EmptyActivity
--keep class com.talkweb.lxl.cockroachlib.ErrorActivity
--keep class com.talkweb.lxl.cockroachlib.ExceptionHandler
+-keep class com.talkweb.lxl.cockroachlib.*
