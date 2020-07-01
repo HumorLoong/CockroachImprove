@@ -18,7 +18,9 @@ public class MyApplication extends Application implements ExceptionHandler {
     @Override
     public void onCreate() {
         super.onCreate();
-        CockroachImprove.install(this);
+        if (SettingManager.getInstance().getIsInstall(this,true)){
+            CockroachImprove.install(this);
+        }
     }
 
     /**
