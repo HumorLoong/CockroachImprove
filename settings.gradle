@@ -1,0 +1,3 @@
+rootProject.name='CockroachImprove'
+include ':app'
+include ':cockroachlib'
