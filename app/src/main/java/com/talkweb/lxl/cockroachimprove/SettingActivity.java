@@ -1,7 +1,9 @@
 package com.talkweb.lxl.cockroachimprove;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -31,6 +33,7 @@ public class SettingActivity extends AppCompatActivity implements CompoundButton
         swtIsInstall = findViewById(R.id.swt_is_install);
         swtIsShowErr.setChecked(SettingManager.getInstance().getIsShowError(this, false));
         swtIsInstall.setChecked(SettingManager.getInstance().getIsInstall(this, true));
+        ((LinearLayout)swtIsShowErr.getParent()).setVisibility(SettingManager.getInstance().getIsInstall(this, true) ? View.VISIBLE : View.GONE);
     }
 
     public void initListener() {
@@ -43,6 +46,7 @@ public class SettingActivity extends AppCompatActivity implements CompoundButton
         if (buttonView.getId() == R.id.swt_is_show_err) {
             SettingManager.getInstance().setIsShowError(this, isChecked);
         } else {
+            ((LinearLayout)swtIsShowErr.getParent()).setVisibility(isChecked ? View.VISIBLE : View.GONE);
             SettingManager.getInstance().setIsInstall(this, isChecked);
             Toast.makeText(this, "请退出应用并清理后台再进行操作", Toast.LENGTH_SHORT).show();
         }
