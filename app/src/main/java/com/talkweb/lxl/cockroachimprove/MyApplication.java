@@ -2,7 +2,7 @@ package com.talkweb.lxl.cockroachimprove;
 
 import android.app.Application;
 
-import com.talkweb.lxl.cockroachlib.util.CockroachImproveUtil;
+import com.talkweb.lxl.cockroachlib.CockroachImprove;
 import com.talkweb.lxl.cockroachlib.CrashErrorUtil;
 import com.talkweb.lxl.cockroachlib.EmptyActivity;
 import com.talkweb.lxl.cockroachlib.ErrorActivity;
@@ -18,7 +18,7 @@ public class MyApplication extends Application implements ExceptionHandler {
     @Override
     public void onCreate() {
         super.onCreate();
-        CockroachImproveUtil.install(this);
+        CockroachImprove.install(this);
     }
 
     /**
